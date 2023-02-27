@@ -35,10 +35,6 @@ const tipoDeErrores = [
 
 ]
 
-
-
-
-
 //? Personalizando los mensajes para el usuario
 const mensajesDeError ={
     nombre: {
@@ -56,10 +52,24 @@ const mensajesDeError ={
         valueMissing: "Este campo no puede estar Vacio",
         customError: "Debes tener al menos 18 años de Edad!"
     },
+    numero: {
+        valueMissing: "Este campo no puede estar Vacio",
+        patternMismatch: "El formato requerido es XXXXXXXX 9 números."
+    },
+    direccion: {
+        valueMissing: "Este campo no puede estar Vacio",
+        patternMismatch: "La dirección debe contener entre 10 a 40 caracteres."
+    },
+    ciudad: {
+        valueMissing: "Este campo no puede estar Vacio",
+        patternMismatch: "La ciudad debe contener entre 10 a 40 caracteres."
+    },
+    estado: {
+        valueMissing: "Este campo no puede estar Vacio",
+        patternMismatch: "El estado debe contener entre 10 a 40 caracteres."
+    },
 
 };
-
-
 
 const validadores = {
     nacimiento: input => validarNacimiento(input),
@@ -79,7 +89,6 @@ function mostrarMensajeDeError(tipoDeInput, input){
 
     return mensaje;
 }
-
 
 function validarNacimiento(input){
     const fechaCliente = new Date(input.value + "T00:00:00");
